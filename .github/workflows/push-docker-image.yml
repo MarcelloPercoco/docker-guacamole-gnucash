@@ -25,3 +25,10 @@ jobs: # job name
         with:
           context: .
           tags: docker.io/cobra1978/gnucash:latest
+          push: false
+      - name: Push To Registry
+        uses: redhat-actions/push-to-registry@v2.6
+        with:
+          image: cobra1978/gnucash
+          registry: docker.io
+
