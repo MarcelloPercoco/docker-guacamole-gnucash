@@ -16,7 +16,7 @@ jobs: # job name
     steps:
       - uses: actions/checkout@v2 # first action : checkout source code
       - name: docker login
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           registry: ${REPO_NAME}
           username: ${DOCKER_USER}
