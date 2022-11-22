@@ -5,7 +5,7 @@ env:
   DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
   REPO_NAME: ${{secrets.REPO_NAME}}
 
-jobs:  push-image-to-docker-hub  # job name    
+jobs: # job name    
   runs-on: ubuntu-latest  # runner name : (ubuntu latest version)     
   steps:
     - uses: actions/checkout@v2 # first action : checkout source code
