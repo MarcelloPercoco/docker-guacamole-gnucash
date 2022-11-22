@@ -4,7 +4,7 @@ env:
   DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
   REGISTRY: ${{ secrets.REGISTRY }}
-  REPOSITORY: ${{ secrets.REPOSITORY }}
+  REPO_NAME: ${{ secrets.REPO_NAME }}
 
 on:
   push:
@@ -26,11 +26,11 @@ jobs: # job name
         uses: docker/build-push-action@v3
         with:
           context: .
-          tags: ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:latest
+          tags: ${{ env.REGISTRY }}/${{ env.REPO_NAME }}:latest
           push: false
       - name: Push To Registry
         uses: redhat-actions/push-to-registry@v2.6
         with:
-          image: ${{ env.REPOSITORY }}
+          image: ${{ env.REPO_NAME }}
           registry: ${{ env.REGISTRY }}
 
