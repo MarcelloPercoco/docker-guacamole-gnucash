@@ -22,6 +22,6 @@ jobs: # job name
           username: ${DOCKER_USER}
           password: ${DOCKER_PASSWORD}
       - name: Build the Docker image # push The image to the docker hub
-        uses: uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v3
         with:
           context: .
