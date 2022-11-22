@@ -25,3 +25,4 @@ jobs: # job name
         uses: docker/build-push-action@v3
         with:
           context: .
+          tags: gnucash:latest
