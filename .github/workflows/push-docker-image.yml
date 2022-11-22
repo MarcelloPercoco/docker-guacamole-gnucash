@@ -5,6 +5,11 @@ env:
   DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
   REPO_NAME: ${{secrets.REPO_NAME}}
 
+on:
+  push:
+    branches:
+    - 'master'
+
 jobs: # job name 
   build-deploy: 
     runs-on: ubuntu-latest  # runner name : (ubuntu latest version)     
