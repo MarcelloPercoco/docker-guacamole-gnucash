@@ -29,7 +29,7 @@ jobs: # job name
         uses: docker/build-push-action@v3
         with:
           context: .
-          tags: ${{ env.REGISTRY }}/${{ env.REPO_NAME }}:${{ env.GNUCASH_VERSION }}
+          tags: ${{ env.REGISTRY }}/${{ env.REPO_NAME }}:${{ env.GNUCASH_VERSION }},${{ env.REGISTRY }}/${{ env.REPO_NAME }}:latest
           push: false
       - name: Push To Registry
         uses: redhat-actions/push-to-registry@v2.6
