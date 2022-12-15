@@ -17,3 +17,5 @@ COPY /root /
 EXPOSE 3000
 
 VOLUME /config
+
+HEALTHCHECK CMD curl --fail 'http://localhost:3000' || echo exit 1
